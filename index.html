@@ -166,6 +166,18 @@ header .btn{padding:9px 16px;font-size:.9rem}
 @media (max-width:860px){.calc{grid-template-columns:1fr}.resumo{position:static}}
 @media (max-width:420px){.areas{grid-template-columns:1fr}}
 
+.tabela{display:grid;gap:14px;padding-top:12px}
+.tabela>p{color:var(--muted);font-size:.95rem}
+.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.tab{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:4px;font-size:.95rem}
+.tab caption{text-align:left;font-family:var(--display);font-size:1.2rem;padding:0 0 8px}
+.tab thead th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+.tab thead th:last-child,.tab td{text-align:right}
+.tab tbody th{text-align:left;font-weight:400;padding:10px 16px}
+.tab td{padding:10px 16px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted)}
+.tab tbody tr+tr>*{border-top:1px solid var(--line)}
+@media (max-width:640px){.tabs{grid-template-columns:1fr}}
+
 footer{background:var(--band);color:var(--band-muted);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
 footer img{width:84px;height:84px}
@@ -291,7 +303,7 @@ footer .credito b{display:inline;margin:0;color:var(--gold);font-family:var(--di
       <div class="precos-head">
         <span class="eyebrow">Preços</span>
         <h2>Monte sua sessão</h2>
-        <p>Toque no corpo para escolher as áreas. O valor varia conforme o tipo de pelo, por isso mostramos uma faixa por área.</p>
+        <p>Toque no corpo para escolher as áreas. O valor varia conforme o tipo de pelo, por isso mostramos uma faixa por área. Se preferir, veja a <a href="#tabela">tabela completa</a> logo abaixo.</p>
       </div>
       <div class="calc">
         <div class="corpo">
@@ -373,6 +385,16 @@ footer .credito b{display:inline;margin:0;color:var(--gold);font-family:var(--di
           <button class="btn" id="enviar" type="button"><svg><use href="#wa"/></svg>Agendar avaliação</button>
           <span class="erro" id="erro"></span>
         </aside>
+      </div>
+      <div class="tabela" id="tabela">
+        <h3>Tabela de preços</h3>
+        <p>Valor por sessão de cada área. Mãos, pés e dedos saem grátis com braço ou perna.</p>
+        <div class="tabs">
+        <table class="tab"><caption>Rosto e pescoço</caption><thead><tr><th scope="col">Área</th><th scope="col">Por sessão</th></tr></thead><tbody><tr><th scope="row">Buço</th><td>R$ 50</td></tr><tr><th scope="row">Maçã do rosto</th><td>R$ 60</td></tr><tr><th scope="row">Pescoço</th><td>R$ 50</td></tr><tr><th scope="row">Barba completa</th><td>R$ 120</td></tr></tbody></table>
+        <table class="tab"><caption>Tronco</caption><thead><tr><th scope="col">Área</th><th scope="col">Por sessão</th></tr></thead><tbody><tr><th scope="row">Axilas</th><td>R$ 85 a R$ 140</td></tr><tr><th scope="row">Peitoral</th><td>R$ 80</td></tr><tr><th scope="row">Abdômen</th><td>R$ 80 a R$ 150</td></tr><tr><th scope="row">Costas</th><td>R$ 100 a R$ 270</td></tr></tbody></table>
+        <table class="tab"><caption>Região íntima e glúteos</caption><thead><tr><th scope="col">Área</th><th scope="col">Por sessão</th></tr></thead><tbody><tr><th scope="row">Virilha</th><td>R$ 150 a R$ 180</td></tr><tr><th scope="row">Glúteo</th><td>R$ 80 a R$ 130</td></tr><tr><th scope="row">Região anal</th><td>R$ 50</td></tr></tbody></table>
+        <table class="tab"><caption>Braços e pernas</caption><thead><tr><th scope="col">Área</th><th scope="col">Por sessão</th></tr></thead><tbody><tr><th scope="row">Braço ou antebraço</th><td>R$ 80 a R$ 100</td></tr><tr><th scope="row">Coxa</th><td>R$ 110 a R$ 180</td></tr><tr><th scope="row">Perna</th><td>R$ 100 a R$ 150</td></tr></tbody></table>
+        </div>
       </div>
     </div>
   </section>
